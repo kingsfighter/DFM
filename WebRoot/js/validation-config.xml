@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE validation-config SYSTEM "validation-config.dtd">
+<validation-config lang="auto">
+	<form show-error="alert" id="addUserForm" show-type="all">
+		<field display-name="员工姓名" name="name">
+			<depend name="required"/>
+			<depend name="minLength" param0="1"/>
+			<depend name="maxLength" param0="32"/>
+		</field>
+		<field display-name="用户名" name="username">
+			<depend name="required"/>
+			<depend name="commonChar"/>
+			<depend name="minLength" param0="6"/>
+			<depend name="maxLength" param0="32"/>
+		</field>
+		<field display-name="密码" name="password">
+			<depend name="required"/>
+			<depend name="commonChar"/>
+			<depend name="minLength" param0="6"/>
+			<depend name="maxLength" param0="32"/>
+		</field>
+		<field display-name="确认密码" name="password1">
+			<depend name="required"/>
+			<depend name="commonChar"/>
+			<depend name="minLength" param0="6"/>
+			<depend name="maxLength" param0="32"/>
+			<depend name="equalsField" param0="password"/>
+		</field>
+		<field display-name="所在部门" name="department">
+			<depend name="required"/>
+		</field>
+		<field display-name="项目组" name="projectGroup">
+			<depend name="required"/>
+		</field>
+		<field display-name="Email" name="email">
+			<depend name="required"/>
+			<depend name="email"/>
+		</field>
+	</form>
+	<form show-error="alert" id="addProjectForm" show-type="all">
+		<field display-name="项目名" name="projectName">
+			<depend name="required"/>
+			<depend name="commonChar"/>
+			<depend name="minLength" param0="6"/>
+			<depend name="maxLength" param0="32"/>
+		</field>
+		<field display-name="版本" name="version">
+			<depend name="required"/>
+		</field>
+		<field display-name="PCB文件包" name="pcbFile">
+			<depend name="required"/>
+		</field>
+		<!--<field display-name="BOM文件" name="bomFile">
+			<depend name="required"/>
+		</field>
+		--><field display-name="任务类型" name="checkType">
+			<depend name="required"/>
+		</field>
+		<field display-name="单板类型" name="pcbType">
+			<depend name="required"/>
+		</field>
+		<field display-name="HDI层叠方式" name="hdiModel">
+			<depend name="required"/>
+		</field>
+		<field display-name="板厚" name="boardThickness">
+			<depend name="required"/>
+			<depend name="mask" param0="^(([0-9]+[\.]?[0-9]+)|[1-9])$"/>
+		</field>
+		<field display-name="拼板方式" name="panelModel">
+			<depend name="required"/>
+		</field>
+		<field display-name="Top面限高" name="maxHeightTop">
+			<depend name="required"/>
+			<depend name="mask" param0="^(([0-9]+[\.]?[0-9]+)|[1-9])$"/>
+		</field>
+		<field display-name="几拼板" name="subPcbNum">
+			<depend name="required"/>
+			<depend name="integer"/>
+		</field>
+		<field display-name="Bottom限高" name="maxHeightBot">
+			<depend name="required"/>
+			<depend name="mask" param0="^(([0-9]+[\.]?[0-9]+)|[1-9])$"/>
+		</field>
+		<field display-name="辅助边位置" name="railwayPosition">
+			<depend name="required"/>
+		</field>
+		<!-- 
+		<field display-name="过孔涂绿油" name="viacapLayer">
+			<depend name="required"/>
+		</field>
+		 -->
+		<field display-name="Top工艺路线" name="assemblyProcessTop">
+			<depend name="required"/>
+		</field>
+		<field display-name="是否有铅" name="havePb">
+			<depend name="required"/>
+		</field>
+		<field display-name="Bottom工艺路线" name="assemblyProcessBot">
+			<depend name="required"/>
+		</field>
+		<field display-name="表面处理方式" name="surfaceProcess">
+			<depend name="required"/>
+		</field>
+		<field display-name="Top回流过板方向" name="directionTop">
+			<depend name="required"/>
+		</field>
+		<field display-name="主要面" name="primarySide">
+			<depend name="required"/>
+		</field>
+		<field display-name="Bottom回流过板方向" name="directionBot">
+			<depend name="required"/>
+		</field>
+		<field display-name="Bottom波峰过板方向" name="directionBotFs">
+			<depend name="required"/>
+		</field>
+		
+	</form>
+</validation-config>

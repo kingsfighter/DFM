@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean name="/login.do" class="com.kfighter.dfm.controller.LoginController">
+		<property name="methodNameResolver" ref="paraMethodResolver"/>
+		<property name="loginService" ref="loginService"/>
+		<property name="menuService" ref="menuService"/>
+	</bean>
+	
+	
+	<bean name="/user.do" class="com.kfighter.dfm.controller.UserController">
+		<property name="methodNameResolver" ref="paraMethodResolver"/>
+		<property name="userService" ref="userService"/>
+		<property name="fileService" ref="fileService"/>
+	</bean>
+	
+	<bean name="/project.do" class="com.kfighter.dfm.controller.ProjectController">
+		<property name="methodNameResolver" ref="paraMethodResolver"/>
+		<property name="projectService" ref="projectService"/>
+		<property name="userService" ref="userService"/>
+		<property name="fileService" ref="fileService"/>
+	</bean>
+	<bean name="/file.do" class="com.kfighter.dfm.controller.FileController">
+		<property name="methodNameResolver" ref="paraMethodResolver"/>
+		<property name="fileService" ref="fileService"/>
+	</bean>
+
+</beans>

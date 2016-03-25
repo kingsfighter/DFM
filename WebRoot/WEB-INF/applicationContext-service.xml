@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean id="loginService" class="com.kfighter.dfm.service.LoginService">
+		<property name="userDAO" ref="userDAO"/>
+	</bean>
+	<bean id="menuService" class="com.kfighter.dfm.service.MenuService">
+		<property name="menuDAO" ref="menuDAO"/>
+	</bean>
+	<bean id="userService" class="com.kfighter.dfm.service.UserService">
+		<property name="userDAO" ref="userDAO"/>
+		<property name="projectService" ref="projectService"/>
+	</bean>
+	<bean id="fileService" class="com.kfighter.dfm.service.FileService">
+		<property name="fileDAO" ref="fileDAO"/>
+	</bean>
+	<bean id="projectService" class="com.kfighter.dfm.service.ProjectService">
+		<property name="projectDAO" ref="projectDAO"/>
+		<property name="fileService" ref="fileService"/>
+		<property name="userDAO" ref="userDAO"/>
+	</bean>
+</beans>

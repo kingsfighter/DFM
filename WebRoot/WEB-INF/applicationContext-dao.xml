@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean id="userDAO" class="com.kfighter.dfm.dao.UserDAO">
+		<property name="dataSource" ref="dataSource"/>
+	</bean>
+	<bean id="menuDAO" class="com.kfighter.dfm.dao.MenuDAO">
+		<property name="dataSource" ref="dataSource"/>
+	</bean>
+	<bean id="fileDAO" class="com.kfighter.dfm.dao.FileDAO">
+		<property name="dataSource" ref="dataSource"/>
+	</bean>
+	<bean id="projectDAO" class="com.kfighter.dfm.dao.ProjectDAO">
+		<property name="dataSource" ref="dataSource"/>
+	</bean>
+	
+</beans>
